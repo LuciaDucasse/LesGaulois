@@ -21,19 +21,23 @@ public class Village {
 	}
 	
 	int nbVillageois = 0;
-	String[] villageois = new String[nbVillageoisMaximum];
+	Class [] villageois = new Class [nbVillageoisMaximum];
 	
-	public void  ajouterHabitant(Gaulois gaulois) {
-		villageois[nbVillageois] = gaulois;
+	public void  ajouterHabitant(Class habitant) {
+		villageois[nbVillageois] = habitant;
 		nbVillageois += 1;
 	}
 	
-	public void trouverHabitant(int num) {
-		System.out.println(villageois[num]);
+	public Class trouverHabitant(int num) {
+		return(villageois[num]);
 	}
 	public static void main(String[] args) {
 		Village villageDesIrreductibles = new Village("Village des Irréductibles", 30); 
-		Gaulois gaulois = Village.trouverHabitant(30);
+		Chef abraracourcix = new Chef("Abraracourcix", 6, villageDesIrreductibles);
+		ajouterHabitant(Chef.abraracourcix);
+		
+		//gaulois = Village.trouverHabitant(30);
+		
 	}
 			
 }
